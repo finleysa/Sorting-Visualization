@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { BubblesortComponent } from './bubblesort/bubblesort.component';
 import { InsertionsortComponent } from './insertionsort/insertionsort.component';
 import { SortingComponent } from './sorting.component';
-import { HomeComponent } from '../home/home.component';
 import { QuicksortComponent } from './quicksort/quicksort.component';
 import { RadixsortComponent } from './radixsort/radixsort.component';
+import { SortingModule } from './sorting.module';
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'insertionsort', component: InsertionsortComponent },
   { path: 'quicksort', component: QuicksortComponent },
   { path: 'radixsort', component: RadixsortComponent },
-  { path: '**', component: HomeComponent},
+  { path: '**', component: SortingModule},
 
 ];
 

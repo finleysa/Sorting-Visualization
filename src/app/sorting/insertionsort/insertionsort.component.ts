@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SnackService } from 'src/app/services/snack.service';
 import { Bar } from '../bar/bar.model';
-import { SortService } from 'src/app/services/sort.service';
+import { SnackService } from '../../services/snack.service';
+import { SortService } from '../../services/sort.service';
 import { takeUntil, debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ISortComponent } from '../sorting.interface';

@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { SortingModule } from './sorting/sorting.module';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   {
     path: 'sorting',
     loadChildren: () => import('./sorting/sorting.module').then(m => m.SortingModule)
@@ -13,11 +12,7 @@ const routes: Routes = [
     path: 'pathfinding',
     loadChildren: () => import('./pathfinding/pathfinding.module').then(m => m.PathfindingModule)
   },
-  {
-    path: 'htb',
-    loadChildren: () => import('./htb/htb.module').then(m => m.HtbModule),
-  },
-  { path: '**', component: HomeComponent }
+  { path: '**', redirectTo: '/sorting'}
 ];
 
 @NgModule({

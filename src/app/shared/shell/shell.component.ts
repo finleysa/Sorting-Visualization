@@ -4,8 +4,8 @@ import { MatSliderChange } from '@angular/material/slider';
 
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { SortService } from 'src/app/services/sort.service';
-import { RoutingService } from 'src/app/services/routing.service';
+import { SortService } from '../../services/sort.service';
+import { RoutingService } from '../../services/routing.service';
 import { NavigationEnd } from '@angular/router';
 
 @Component({
@@ -40,15 +40,17 @@ export class ShellComponent implements OnInit {
     ngOnInit() {
         this.routerService.navEnd.subscribe((nav: NavigationEnd) => {
             this.isSortUrl = nav.url.includes('sorting');
-            if (nav.url !== '/') {
-                this.link = '';
-            } else {
-                this.link = nav.url;
-                this.sortService.reset();
-            }
+            // if (nav.url !== '/') {
+            //     this.link = '';
+            // } else {
+            //     this.link = nav.url;
+            //     this.sortService.reset();
+            // }
+            this.sortService.reset();
             const splitUrl = nav.url.split('/');
             const path = splitUrl[splitUrl.length - 1];
             this.title = this.findTitle(path);
+            this.link = 'sorting'
         });
     }
 
@@ -66,13 +68,8 @@ export class ShellComponent implements OnInit {
             // PATHFINDING
             case 'pathfinding':
                 return 'Pathfinding';
-            // Map
-            case 'map':
-                return 'Leaflet Map';
-            case 'htb':
-                return 'Hack The Box';
             default:
-                return 'My Portfolio';
+                return 'Sorting';
         }
     }
 

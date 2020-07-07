@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bar } from '../bar/bar.model';
-import { SnackService } from 'src/app/services/snack.service';
-import { SortService } from 'src/app/services/sort.service';
+import { SnackService } from '../../services/snack.service';
+import { SortService } from '../../services/sort.service';
 
 @Component({
     selector: 'app-radixsort',
