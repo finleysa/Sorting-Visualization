@@ -16,7 +16,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSliderModule } from '@angular/material/slider';
 import { ShellComponent } from './shell/shell.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const components = [ShellComponent];
 
@@ -36,8 +35,7 @@ const modules = [
   MatTooltipModule,
   MatSnackBarModule,
   MatSliderModule,
-  RouterModule,
-  FontAwesomeModule
+  RouterModule
 ];
 
 @NgModule({
