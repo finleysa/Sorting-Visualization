@@ -1,3 +1,26 @@
-:host {
-  
+main {
+    padding: 3rem;
+    min-height: calc(100vh - 40px);
+
+    .icons {
+        margin-top: 1rem;
+        a {
+            fa-icon {
+                padding: 0.4rem;
+                color: white;
+            }
+        }
+    }
+
+    &#home {
+        overflow: hidden;
+
+        h1 {
+            margin-top: 8vh;
+        }
+    }
+
+    #about {
+        margin-top: 3em;
+    }
 }

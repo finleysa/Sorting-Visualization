@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Sorting Examples</mat-card-title>
+        <mat-card-subtitle>A few visual sorting examples</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button
+            color="primary"
+            routerLink="/sorting/bubblesort"
+            routerLinkActive="active">
+                Bubble Sort
+            </button>
+            <p>
+                Bubble sort repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
+            </p>
+        </mat-card-actions>
+        <mat-card-actions>
+            <button 
+                mat-raised-button
+                color="primary"
+                routerLink="/sorting/insertionsort"
+                routerLinkActive="active">
+                    Insertion Sort
+            </button>
+            <p>
+                Insertion sort is the sorting mechanism where the sorted array is built having one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order.
+            </p>
+        </mat-card-actions>
+        <mat-card-actions>
+            <button 
+                mat-raised-button
+                color="primary"
+                routerLink="/sorting/quicksort"
+                routerLinkActive="active">
+                    Quicksort
+            </button>
+            <p>
+                Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting. 
+            </p>
+        </mat-card-actions>
+    </mat-card-content>
+
+</mat-card>

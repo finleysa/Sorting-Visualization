@@ -1,0 +1,80 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <!-- SIDENAV -->
+
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+        <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+        <a mat-list-item routerLink="/sorting" (click)="drawer.close()" routerLinkActive="active">Sorting</a>
+        <!-- <a mat-list-item routerLink="/map" (click)="drawer.close()" routerLinkActive="active">Leaflet</a> -->
+
+    </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+    <!-- TOP TOOLBAR-->
+
+    <mat-toolbar color="primary" class="mat-elevation-z6">
+        <button 
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="logo" [routerLink]="link">{{title}}</span>
+
+        <span class="fill-space"></span>
+        <div *ngIf="!(isHandset$ | async)">
+            <a mat-button *ngIf="notHomePath" routerLink="/">Home</a>
+            <a mat-button routerLink="/sorting" routerLinkActive="active">Sorting</a>
+            <a mat-button routerLink="/htb" routerLinkActive="active">Hack The Box</a>
+            <!-- <a mat-button routerLink="/map" routerLinkActive="active">Leaflet</a> -->
+        </div>
+
+        <!-- DROPDOWN MENU -->
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isSortUrl">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <div mat-menu-item>
+                <label>Bars</label>
+                <mat-slider
+                    tickInterval="5"
+                    min="5"
+                    max="100"
+                    [value]="barsValue"
+                    (input)="barsValueChanged($event)"
+                    (click)="$event.stopPropagation()">
+                </mat-slider>
+            </div>
+            <div mat-menu-item>
+                <label>Speed</label>
+                <mat-slider
+                    tickInterval="1"
+                    min="1"
+                    max="100"
+                    invert="true"
+                    [value]="speedValue"
+                    (input)="speedValueChanged($event)"
+                    (click)="$event.stopPropagation()">
+                </mat-slider>
+            </div>
+            <button mat-menu-item (click)="reset(); $event.stopPropagation();">RESET</button>
+            <button mat-menu-item (click)="sort(); drawer.close();">SORT</button>
+        </mat-menu>
+    </mat-toolbar>
+
+    <!-- TRANSCLUSION -->
+    <ng-content></ng-content>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
