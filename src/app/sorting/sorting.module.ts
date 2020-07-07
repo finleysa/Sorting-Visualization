@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CoreModule } from '../core/core.module'
 
 import { SortingRoutingModule } from './sorting-routing.module';
 import { BubblesortComponent } from './bubblesort/bubblesort.component';
@@ -23,7 +24,8 @@ import { RadixsortComponent } from './radixsort/radixsort.component';
   imports: [
     CommonModule,
     SortingRoutingModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ]
 })
 export class SortingModule { }
