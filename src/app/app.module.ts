@@ -13,13 +13,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 // Services
-import { SortService } from './services/sort.service'
-import { SnackService } from './services/snack.service'
+import { SortService } from './services/sort.service';
+import { SnackService } from './services/snack.service';
+import { ElectronService } from './services/electron.service';
 
 // NG Translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -46,7 +46,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ],
   providers: [
     SortService,
-    SnackService
+    SnackService,
+    ElectronService
   ],
   bootstrap: [AppComponent]
 })
