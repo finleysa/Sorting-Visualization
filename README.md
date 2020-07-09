@@ -1,10 +1,12 @@
-[![Angular Logo](https://www.vectorlogo.zone/logos/angular/angular-icon.svg)](https://angular.io/) [![Electron Logo](https://www.vectorlogo.zone/logos/electronjs/electronjs-icon.svg)](https://electronjs.org/)
+[![Angular Logo](https://www.vectorlogo.zone/logos/angular/angular-icon.svg)](https://angular.io/) [![Electron Logo](https://www.vectorlogo.zone/logos/electronjs/electronjs-icon.svg)](https://electronjs.org/) 
 
 # Introduction
 
 This is an Electron / Angular sorting visualization application.
 
-Template credit: https://github.com/maximegris/angular-electron
+Electron Template credit: https://github.com/maximegris/angular-electron
+
+[![Sorting Image](http://54.145.92.109/sort.png)](https://usncoder.com/sorting)
 
 ## Getting Started
 
