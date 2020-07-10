@@ -13,7 +13,7 @@ Electron Template credit: https://github.com/maximegris/angular-electron
 Clone this repository locally :
 
 ``` bash
-git clone https://github.com/maximegris/angular-electron.git
+git clone https://github.com/finleysa/Sorting-Visualization.git
 ```
 
 Install dependencies with npm :
